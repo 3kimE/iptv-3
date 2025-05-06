@@ -18,9 +18,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "Live TV", path: "/live" },
-    { name: "Categories", path: "/categories" },
-    { name: "Favorites", path: "/favorites" },
+    { name: "Categories", path: "/categories" }
   ];
 
   return (
@@ -63,7 +61,7 @@ const Navbar = () => {
             <div className="relative animate-fade-in">
               <Input
                 type="search"
-                placeholder="Search channels..."
+                placeholder="Search packages..."
                 className="w-[200px] focus:w-[300px] transition-all duration-300"
                 autoFocus
                 onBlur={() => setSearchOpen(false)}
