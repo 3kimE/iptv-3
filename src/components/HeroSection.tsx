@@ -9,8 +9,8 @@ const HeroSection = () => {
     <section className="relative h-[85vh] overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=1600&auto=format&fit=crop&q=80"
-          alt="Featured content"
+          src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=1600&auto=format&fit=crop&q=80"
+          alt="Champions League"
           className="h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
@@ -28,7 +28,7 @@ const HeroSection = () => {
             <span className="rounded-full bg-iptv-500 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
               Premium
             </span>
-            <span className="text-iptv-accent font-medium">Featured</span>
+            <span className="text-iptv-accent font-medium">Champions League</span>
           </motion.div>
           
           <motion.h1 
@@ -37,7 +37,7 @@ const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-5xl sm:text-6xl font-bold text-white leading-tight"
           >
-            Premium Streaming <br/>
+            Premium Sports <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-iptv-400 to-iptv-accent">
               Without Limits
             </span>
@@ -58,13 +58,13 @@ const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.6 }}
             className="flex flex-wrap gap-4 pt-4"
           >
-            <Button size="lg" className="group bg-gradient-to-r from-iptv-600 to-iptv-500 hover:from-iptv-700 hover:to-iptv-600 border-none">
+            <Button size="lg" className="group bg-gradient-to-r from-iptv-600 to-iptv-500 hover:from-iptv-700 hover:to-iptv-600 border-none" onClick={() => document.getElementById('packages')?.scrollIntoView({behavior: 'smooth'})}>
               <Play className="mr-2 h-4 w-4 group-hover:animate-pulse" />
               Browse Packages
             </Button>
-            <Button variant="outline" size="lg" className="bg-background/30 backdrop-blur-sm hover:bg-background/50 border-white/20">
+            <Button variant="outline" size="lg" className="bg-background/30 backdrop-blur-sm hover:bg-background/50 border-white/20" onClick={() => window.location.href = '/contact'}>
               <Info className="mr-2 h-4 w-4" />
-              Learn More
+              Contact Us
             </Button>
           </motion.div>
         </div>

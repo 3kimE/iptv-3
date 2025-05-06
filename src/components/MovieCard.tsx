@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Info, Star, Play } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 interface MovieCardProps {
   id: string;
@@ -17,6 +18,7 @@ interface MovieCardProps {
 }
 
 const MovieCard = ({
+  id,
   title,
   poster,
   genre,
@@ -62,11 +64,15 @@ const MovieCard = ({
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 p-4 opacity-0 transition-opacity duration-300"
                 style={{ opacity: isHovered ? 1 : 0 }}
               >
-                <Button variant="secondary" size="sm" className="bg-white/90 hover:bg-white text-black gap-1.5 group">
-                  <Play className="h-4 w-4 group-hover:text-iptv-500" /> Watch Trailer
+                <Button variant="secondary" size="sm" className="bg-white/90 hover:bg-white text-black gap-1.5 group" asChild>
+                  <Link to={`/movies`}>
+                    <Play className="h-4 w-4 group-hover:text-iptv-500" /> Watch Trailer
+                  </Link>
                 </Button>
-                <Button variant="outline" size="sm" className="bg-black/50 text-white border-white/30 hover:bg-black/70 gap-1.5">
-                  <Info className="h-4 w-4" /> More Info
+                <Button variant="outline" size="sm" className="bg-black/50 text-white border-white/30 hover:bg-black/70 gap-1.5" asChild>
+                  <Link to={`/movies/${id}`}>
+                    <Info className="h-4 w-4" /> More Info
+                  </Link>
                 </Button>
               </div>
             )}
