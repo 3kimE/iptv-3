@@ -1,4 +1,3 @@
-
 export const categories = [
   { id: "all", name: "All" },
   { id: "news", name: "News" },
@@ -86,6 +85,52 @@ export const channels = [
     logo: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&auto=format&fit=crop&q=60",
     category: "documentary",
     currentProgram: "Wild Africa",
+  },
+];
+
+export const subscriptionPackages = [
+  {
+    id: "basic",
+    name: "Basic Package",
+    price: 9.99,
+    description: "Access to 50+ channels with HD quality",
+    features: [
+      "50+ Live TV Channels",
+      "HD Quality Streaming",
+      "Watch on 1 device at a time",
+      "7-day catch-up service",
+    ],
+    popular: false,
+  },
+  {
+    id: "premium",
+    name: "Premium Package",
+    price: 19.99,
+    description: "Access to 120+ channels with Full HD quality",
+    features: [
+      "120+ Live TV Channels",
+      "Full HD Quality Streaming",
+      "Watch on 2 devices simultaneously",
+      "14-day catch-up service",
+      "Sports premium content",
+    ],
+    popular: true,
+  },
+  {
+    id: "ultimate",
+    name: "Ultimate Package",
+    price: 29.99,
+    description: "Access to 200+ channels with 4K quality",
+    features: [
+      "200+ Live TV Channels",
+      "4K Ultra HD Quality Streaming",
+      "Watch on 4 devices simultaneously",
+      "30-day catch-up service",
+      "Sports premium content",
+      "Movie premieres",
+      "Exclusive shows",
+    ],
+    popular: false,
   },
 ];
 

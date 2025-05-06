@@ -6,6 +6,7 @@ import HeroSection from "@/components/HeroSection";
 import ChannelGrid from "@/components/ChannelGrid";
 import CategoryList from "@/components/CategoryList";
 import LivePlayer from "@/components/LivePlayer";
+import SubscriptionPackages from "@/components/SubscriptionPackages";
 import { categories, featuredChannels, trendingChannels, liveChannels, channels } from "@/data/mockData";
 
 const Index = () => {
@@ -80,6 +81,8 @@ const Index = () => {
           channels={trendingChannels} 
           viewAllLink="/popular" 
         />
+
+        <SubscriptionPackages />
       </main>
       
       <Footer />
