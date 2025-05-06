@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,20 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+                iptv: {
+                    100: '#E0F7FF',
+                    200: '#B8E8FF',
+                    300: '#8CD5FF',
+                    400: '#5CBAFF',
+                    500: '#3498FF',
+                    600: '#0C7DE9',
+                    700: '#0064CC',
+                    800: '#004C99',
+                    900: '#003366',
+                    accent: '#FFD166',
+                    highlight: '#06D6A0'
+                }
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,12 +98,31 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+                'pulse-subtle': {
+                    '0%, 100%': { opacity: '1' },
+                    '50%': { opacity: '0.8' }
+                },
+                'slide-in': {
+                    '0%': { transform: 'translateX(-10px)', opacity: '0' },
+                    '100%': { transform: 'translateX(0)', opacity: '1' }
+                },
+                'fade-in': {
+                    '0%': { opacity: '0' },
+                    '100%': { opacity: '1' }
+                }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+                'pulse-subtle': 'pulse-subtle 2s infinite ease-in-out',
+                'slide-in': 'slide-in 0.3s ease-out forwards',
+                'fade-in': 'fade-in 0.4s ease-out forwards'
+			},
+            backgroundImage: {
+                'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                'hero-pattern': 'linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.8) 100%)'
+            }
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
