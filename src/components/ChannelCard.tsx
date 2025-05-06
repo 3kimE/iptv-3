@@ -2,6 +2,7 @@
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
 
 interface ChannelCardProps {
   id: string;
@@ -20,31 +21,59 @@ const ChannelCard = ({
   currentProgram,
 }: ChannelCardProps) => {
   return (
-    <Card className="channel-card overflow-hidden group">
-      <CardContent className="p-0">
-        <div className="relative aspect-video overflow-hidden">
-          <img
-            src={logo}
-            alt={name}
-            className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-500"
-          />
-          {isLive && <div className="live-badge">LIVE</div>}
-        </div>
-        <div className="p-3 space-y-2">
-          <div className="flex items-start justify-between">
-            <h3 className="font-semibold text-base line-clamp-1">{name}</h3>
-            <Badge variant="outline" className="text-xs bg-secondary/50">
-              {category}
-            </Badge>
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
+      whileHover={{ y: -5 }}
+    >
+      <Card className="channel-card overflow-hidden group h-full">
+        <CardContent className="p-0 h-full">
+          <div className="relative aspect-video overflow-hidden">
+            <img
+              src={logo}
+              alt={name}
+              className="w-full h-full object-cover transition-transform group-hover:scale-110 duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            
+            {isLive && (
+              <motion.div 
+                className="live-badge"
+                initial={{ scale: 0.8, opacity: 0.8 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ 
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  duration: 1.2
+                }}
+              >
+                LIVE
+              </motion.div>
+            )}
           </div>
-          {currentProgram && (
-            <p className="text-xs text-muted-foreground line-clamp-1">
-              Now: {currentProgram}
-            </p>
-          )}
-        </div>
-      </CardContent>
-    </Card>
+          <div className="p-3 space-y-2 bg-card">
+            <div className="flex items-start justify-between">
+              <h3 className="font-semibold text-base line-clamp-1 group-hover:text-iptv-400 transition-colors duration-300">{name}</h3>
+              <Badge variant="outline" className="text-xs bg-secondary/70 border-secondary/30">
+                {category}
+              </Badge>
+            </div>
+            {currentProgram && (
+              <p className="text-xs text-muted-foreground line-clamp-1">
+                Now: {currentProgram}
+              </p>
+            )}
+            
+            <motion.div 
+              className="h-1 w-0 bg-gradient-to-r from-iptv-500 to-iptv-300 mt-2 rounded-full"
+              animate={{ width: isLive ? '100%' : '0%' }}
+              transition={{ duration: 2.5, ease: "easeInOut", repeat: isLive ? Infinity : 0 }}
+            />
+          </div>
+        </CardContent>
+      </Card>
+    </motion.div>
   );
 };
 
