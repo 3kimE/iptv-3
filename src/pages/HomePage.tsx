@@ -114,7 +114,17 @@ const liveChannels = [
     isLive: true,
     currentProgram: "Top 40 Countdown"
   },
-];
+
+    {
+      id: "c5",
+      title: "HBO",
+      image: "https://img.utdstc.com/icon/db3/ff9/db3ff9df52071ba96d884cde93221b4ea43a9516d73a2164652aa3b402e33977:200",
+      category: "Movies",
+      isLive: true,
+      currentProgram: "The Owl House"
+    }
+  ];
+  
 
 
 const popularSports = [
