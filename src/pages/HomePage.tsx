@@ -1,4 +1,3 @@
-
 import React from "react";
 import MainNav from "@/components/Navigation/MainNav";
 import MainFooter from "@/components/Footer/MainFooter";
@@ -8,7 +7,7 @@ import PricingSection from "@/components/Home/PricingSection";
 import TestimonialSection from "@/components/Home/TestimonialSection";
 import CallToAction from "@/components/Home/CallToAction";
 import MediaCarousel from "@/components/Home/MediaCarousel";
-import { Film, Tv, Football } from "lucide-react";
+import { Film, Tv, Soccer } from "lucide-react";
 import { WhatsappButton } from "@/components/WhatsappButton";
 
 // Mock data for carousels
@@ -185,7 +184,7 @@ const HomePage = () => {
           items={popularSports}
           type="sport"
           viewAllLink="/live-tv"
-          icon={<Football className="h-6 w-6" />}
+          icon={<Soccer className="h-6 w-6" />}
           accentColor="accent"
         />
         
