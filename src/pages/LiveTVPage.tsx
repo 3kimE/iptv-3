@@ -5,132 +5,131 @@ import MainFooter from "@/components/Footer/MainFooter";
 import MediaCard from "@/components/Common/MediaCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Search, SlidersHorizontal, Film } from "lucide-react";
+import { Search, SlidersHorizontal, Tv } from "lucide-react";
 import { motion } from "framer-motion";
 
 // Mock categories
 const categories = [
-  { id: "all", name: "All Movies" },
-  { id: "action", name: "Action" },
-  { id: "adventure", name: "Adventure" },
-  { id: "comedy", name: "Comedy" },
-  { id: "drama", name: "Drama" },
-  { id: "horror", name: "Horror" },
-  { id: "romance", name: "Romance" },
-  { id: "sci-fi", name: "Sci-Fi" },
-  { id: "thriller", name: "Thriller" }
+  { id: "all", name: "All Channels" },
+  { id: "sports", name: "Sports" },
+  { id: "news", name: "News" },
+  { id: "entertainment", name: "Entertainment" },
+  { id: "movies", name: "Movies" },
+  { id: "kids", name: "Kids" },
+  { id: "music", name: "Music" },
+  { id: "documentary", name: "Documentary" },
 ];
 
-// Mock movies data
-const allMovies = [
+// Mock channels data
+const allChannels = [
   {
-    id: "m1",
-    title: "The Last Journey",
+    id: "c1",
+    title: "Sports Plus",
+    image: "https://images.unsplash.com/photo-1471295253337-3ceaaedca402?w=500&auto=format&fit=crop&q=60",
+    category: "sports",
+    isLive: true,
+    currentProgram: "Champions League Final"
+  },
+  {
+    id: "c2",
+    title: "News 24",
+    image: "https://images.unsplash.com/photo-1495020689067-958852a7765e?w=500&auto=format&fit=crop&q=60",
+    category: "news",
+    isLive: true,
+    currentProgram: "World Report"
+  },
+  {
+    id: "c3",
+    title: "Movie Central",
+    image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=500&auto=format&fit=crop&q=60",
+    category: "movies",
+    isLive: true,
+    currentProgram: "The Blockbuster Show"
+  },
+  {
+    id: "c4",
+    title: "Kids Zone",
+    image: "https://images.unsplash.com/photo-1597340310329-1087c3721289?w=500&auto=format&fit=crop&q=60",
+    category: "kids",
+    isLive: true,
+    currentProgram: "Animated Adventures"
+  },
+  {
+    id: "c5",
+    title: "Music TV",
+    image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500&auto=format&fit=crop&q=60",
+    category: "music",
+    isLive: true,
+    currentProgram: "Top 40 Countdown"
+  },
+  {
+    id: "c6",
+    title: "Premier Sports",
+    image: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=500&auto=format&fit=crop&q=60",
+    category: "sports",
+    isLive: true,
+    currentProgram: "NBA Finals"
+  },
+  {
+    id: "c7",
+    title: "Nature World",
+    image: "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?w=500&auto=format&fit=crop&q=60",
+    category: "documentary",
+    isLive: true,
+    currentProgram: "Wild Africa"
+  },
+  {
+    id: "c8",
+    title: "Comedy Central",
+    image: "https://images.unsplash.com/photo-1607601799024-bef746413678?w=500&auto=format&fit=crop&q=60",
+    category: "entertainment",
+    isLive: true,
+    currentProgram: "Stand-up Special"
+  },
+  {
+    id: "c9",
+    title: "Drama Network",
     image: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=500&auto=format&fit=crop&q=60",
-    category: "action",
-    rating: 4.8,
-    year: 2023
+    category: "entertainment",
+    isLive: true,
+    currentProgram: "Crime Scene"
   },
   {
-    id: "m2",
-    title: "Midnight in Paris",
-    image: "https://images.unsplash.com/photo-1616530940355-351fabd9524b?w=500&auto=format&fit=crop&q=60",
-    category: "romance",
-    rating: 4.5,
-    year: 2022
+    id: "c10",
+    title: "Food & Travel",
+    image: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=500&auto=format&fit=crop&q=60",
+    category: "entertainment",
+    isLive: true,
+    currentProgram: "Global Cuisine"
   },
   {
-    id: "m3",
-    title: "Dark Matter",
-    image: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=500&auto=format&fit=crop&q=60",
-    category: "sci-fi",
-    rating: 4.7,
-    year: 2023
+    id: "c11",
+    title: "History Channel",
+    image: "https://images.unsplash.com/photo-1461360228754-6e81c478b882?w=500&auto=format&fit=crop&q=60",
+    category: "documentary",
+    isLive: true,
+    currentProgram: "Ancient Civilizations"
   },
   {
-    id: "m4",
-    title: "The Forest",
-    image: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=500&auto=format&fit=crop&q=60",
-    category: "horror",
-    rating: 4.3,
-    year: 2022
+    id: "c12",
+    title: "Action Movies",
+    image: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=500&auto=format&fit=crop&q=60",
+    category: "movies",
+    isLive: true,
+    currentProgram: "Die Hard Marathon"
   },
-  {
-    id: "m5",
-    title: "Ocean's Depth",
-    image: "https://images.unsplash.com/photo-1601036241724-872e1e5ce1e1?w=500&auto=format&fit=crop&q=60",
-    category: "adventure",
-    rating: 4.6,
-    year: 2023
-  },
-  {
-    id: "m6",
-    title: "City Lights",
-    image: "https://images.unsplash.com/photo-1506354666786-959d6d497f1a?w=500&auto=format&fit=crop&q=60",
-    category: "drama",
-    rating: 4.9,
-    year: 2023
-  },
-  {
-    id: "m7",
-    title: "Laugh Out Loud",
-    image: "https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?w=500&auto=format&fit=crop&q=60",
-    category: "comedy",
-    rating: 4.1,
-    year: 2022
-  },
-  {
-    id: "m8",
-    title: "Murder Mystery",
-    image: "https://images.unsplash.com/photo-1579547621309-5e57ab324182?w=500&auto=format&fit=crop&q=60",
-    category: "thriller",
-    rating: 4.4,
-    year: 2023
-  },
-  {
-    id: "m9",
-    title: "Skyfall Ultimatum",
-    image: "https://images.unsplash.com/photo-1461151304267-38535e780c79?w=500&auto=format&fit=crop&q=60",
-    category: "action",
-    rating: 4.9,
-    year: 2023
-  },
-  {
-    id: "m10",
-    title: "Wild Horizons",
-    image: "https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=500&auto=format&fit=crop&q=60",
-    category: "adventure",
-    rating: 4.7,
-    year: 2023
-  },
-  {
-    id: "m11",
-    title: "Eternal Love",
-    image: "https://images.unsplash.com/photo-1539310399736-0517fda11c32?w=500&auto=format&fit=crop&q=60",
-    category: "romance",
-    rating: 4.5,
-    year: 2022
-  },
-  {
-    id: "m12",
-    title: "Cyber Attack",
-    image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=500&auto=format&fit=crop&q=60",
-    category: "sci-fi",
-    rating: 4.8,
-    year: 2023
-  }
 ];
 
-const MoviesPage = () => {
+const LiveTVPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
   
-  const filteredMovies = allMovies
-    .filter(movie => 
-      selectedCategory === "all" || movie.category === selectedCategory
+  const filteredChannels = allChannels
+    .filter(channel => 
+      selectedCategory === "all" || channel.category === selectedCategory
     )
-    .filter(movie => 
-      movie.title.toLowerCase().includes(searchQuery.toLowerCase())
+    .filter(channel => 
+      channel.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
   return (
@@ -149,7 +148,7 @@ const MoviesPage = () => {
                   transition={{ duration: 0.5 }}
                   className="text-4xl font-bold mb-4"
                 >
-                  Movies & Series
+                  Live TV Streaming
                 </motion.h1>
                 <motion.p 
                   initial={{ opacity: 0 }}
@@ -157,7 +156,7 @@ const MoviesPage = () => {
                   transition={{ duration: 0.5, delay: 0.2 }}
                   className="text-muted-foreground mb-6"
                 >
-                  Explore our vast collection of movies and series from around the world. New titles added regularly to keep your entertainment fresh and exciting.
+                  Watch thousands of live TV channels from around the world. Sports, news, entertainment, and more - all in one place.
                 </motion.p>
               </div>
               
@@ -168,10 +167,10 @@ const MoviesPage = () => {
                 className="flex-shrink-0 relative"
               >
                 <div className="h-28 w-28 lg:h-40 lg:w-40 rounded-full bg-primary/20 flex items-center justify-center animate-pulse-subtle">
-                  <Film className="h-12 w-12 lg:h-16 lg:w-16 text-primary" />
+                  <Tv className="h-12 w-12 lg:h-16 lg:w-16 text-primary" />
                 </div>
                 <div className="absolute -top-2 -right-2 h-8 w-8 rounded-full bg-accent flex items-center justify-center">
-                  <span className="text-xs font-bold">{allMovies.length}+</span>
+                  <span className="text-xs font-bold">{allChannels.length}+</span>
                 </div>
               </motion.div>
             </div>
@@ -200,7 +199,7 @@ const MoviesPage = () => {
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                   <Input
                     type="search"
-                    placeholder="Search movies..."
+                    placeholder="Search channels..."
                     className="pl-10 w-full md:w-auto"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
@@ -214,33 +213,33 @@ const MoviesPage = () => {
           </div>
         </section>
         
-        {/* Movies Grid */}
+        {/* Channels Grid */}
         <section className="py-12">
           <div className="container">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-              {filteredMovies.map((movie, index) => (
+              {filteredChannels.map((channel, index) => (
                 <motion.div
-                  key={movie.id}
+                  key={channel.id}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
                 >
                   <MediaCard
-                    id={movie.id}
-                    title={movie.title}
-                    image={movie.image}
-                    type="movie"
-                    category={movie.category}
-                    rating={movie.rating}
-                    year={movie.year}
+                    id={channel.id}
+                    title={channel.title}
+                    image={channel.image}
+                    type="channel"
+                    category={channel.category}
+                    isLive={channel.isLive}
+                    currentProgram={channel.currentProgram}
                   />
                 </motion.div>
               ))}
             </div>
             
-            {filteredMovies.length === 0 && (
+            {filteredChannels.length === 0 && (
               <div className="py-12 text-center">
-                <h3 className="text-2xl font-semibold mb-2">No movies found</h3>
+                <h3 className="text-2xl font-semibold mb-2">No channels found</h3>
                 <p className="text-muted-foreground">Try adjusting your search or filters</p>
               </div>
             )}
@@ -253,4 +252,4 @@ const MoviesPage = () => {
   );
 };
 
-export default MoviesPage;
+export default LiveTVPage;
