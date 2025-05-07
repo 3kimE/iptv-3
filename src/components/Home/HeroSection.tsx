@@ -12,7 +12,7 @@ const HeroSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1577985043696-8bd54c9f35e9?q=80&w=1932&auto=format&fit=crop"
+          src="https://info.haas-avocats.com/hubfs/l%E2%80%99IPTV%20est-elle%20ill%C3%A9gale%20%20Le%20cadre%20juridique%20que%20vous%20ne%20pouvez%20pas%20ignorer%20!.png"
           alt="Champions League"
           className="h-full w-full object-cover object-center"
         />
