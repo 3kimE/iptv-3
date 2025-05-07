@@ -105,7 +105,7 @@ const MainNav = () => {
 
             {/* WhatsApp Contact Button */}
             <Button 
-              variant="accent" 
+              variant="secondary" 
               size="sm" 
               className="hidden md:flex items-center gap-1.5"
               onClick={() => window.open("https://wa.me/1234567890", "_blank")}
