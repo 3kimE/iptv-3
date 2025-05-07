@@ -1,17 +1,9 @@
 
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Search, Play, TvIcon, Film, CreditCard, MessageCircle, User } from "lucide-react";
+import { Menu, X, Search, Play, TvIcon, Film, CreditCard, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -111,23 +103,32 @@ const MainNav = () => {
               )}
             </AnimatePresence>
 
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="secondary" size="sm" className="hidden md:flex">
-                  <User className="h-4 w-4 mr-2" />
-                  Account
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-56 mt-2">
-                <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>Profile</DropdownMenuItem>
-                <DropdownMenuItem>Subscriptions</DropdownMenuItem>
-                <DropdownMenuItem>Settings</DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>Log out</DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            {/* WhatsApp Contact Button */}
+            <Button 
+              variant="accent" 
+              size="sm" 
+              className="hidden md:flex items-center gap-1.5"
+              onClick={() => window.open("https://wa.me/1234567890", "_blank")}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="lucide lucide-whatsapp"
+              >
+                <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
+                <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z" />
+                <path d="M14 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z" />
+                <path d="M9.5 13.5c.5 1 1.5 1 2.5 1s2-.5 2.5-1" />
+              </svg>
+              Contact Us
+            </Button>
 
             <Button
               variant="outline"
@@ -180,14 +181,33 @@ const MainNav = () => {
                 ))}
               </nav>
               
-              <div className="grid grid-cols-2 gap-2 mt-2">
-                <Button variant="outline" size="sm" className="w-full">
-                  Log In
-                </Button>
-                <Button size="sm" className="w-full">
-                  Sign Up
-                </Button>
-              </div>
+              <Button 
+                size="sm" 
+                className="w-full flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600"
+                onClick={() => {
+                  window.open("https://wa.me/1234567890", "_blank");
+                  setMobileMenuOpen(false);
+                }}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-whatsapp"
+                >
+                  <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
+                  <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z" />
+                  <path d="M14 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z" />
+                  <path d="M9.5 13.5c.5 1 1.5 1 2.5 1s2-.5 2.5-1" />
+                </svg>
+                Contact via WhatsApp
+              </Button>
             </div>
           </motion.div>
         )}

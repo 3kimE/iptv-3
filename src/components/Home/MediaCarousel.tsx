@@ -28,10 +28,11 @@ interface MediaCarouselProps {
   title: string;
   subtitle?: string;
   items: MediaItem[];
-  type: "movie" | "channel";
+  type: "movie" | "channel" | "sport";
   viewAllLink?: string;
   icon?: ReactNode;
   accentColor?: string;
+  cardStyle?: "default" | "overlay";
 }
 
 const MediaCarousel = ({
@@ -42,11 +43,12 @@ const MediaCarousel = ({
   viewAllLink,
   icon,
   accentColor,
+  cardStyle = "default",
 }: MediaCarouselProps) => {
-  const bgClass = accentColor ? `bg-${accentColor}/5` : "bg-card";
+  const bgClass = accentColor ? `bg-${accentColor}/5` : "bg-card/50";
 
   return (
-    <section className={`py-12 ${bgClass}`}>
+    <section className={`py-10 ${bgClass} backdrop-blur-sm`}>
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -54,18 +56,18 @@ const MediaCarousel = ({
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center justify-between mb-8">
             <div className="flex flex-col">
               <div className="flex items-center gap-2">
-                {icon && <span>{icon}</span>}
-                <h2 className="text-2xl font-bold">{title}</h2>
+                {icon && <span className="text-primary">{icon}</span>}
+                <h2 className="text-2xl md:text-3xl font-bold gradient-text">{title}</h2>
               </div>
               {subtitle && <p className="text-sm text-muted-foreground mt-1">{subtitle}</p>}
             </div>
             
             {viewAllLink && (
               <Button variant="ghost" className="group" asChild>
-                <Link to={viewAllLink}>
+                <Link to={viewAllLink} className="flex items-center gap-1">
                   View All 
                   <ChevronRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
@@ -82,7 +84,7 @@ const MediaCarousel = ({
           >
             <CarouselContent className="-ml-4">
               {items.map((item) => (
-                <CarouselItem key={item.id} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3 xl:basis-1/4 2xl:basis-1/5">
+                <CarouselItem key={item.id} className="pl-4 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
                   <MediaCard
                     id={item.id}
                     title={item.title}
@@ -98,9 +100,9 @@ const MediaCarousel = ({
               ))}
             </CarouselContent>
             
-            <div className="flex justify-end gap-2 mt-4">
-              <CarouselPrevious className="relative -translate-y-0 h-8 w-8 rounded-full" />
-              <CarouselNext className="relative -translate-y-0 h-8 w-8 rounded-full" />
+            <div className="flex justify-center md:justify-end gap-2 mt-6">
+              <CarouselPrevious className="relative -translate-y-0 h-10 w-10 rounded-full border-primary/20 bg-background/80 backdrop-blur-sm text-primary hover:bg-primary hover:text-white" />
+              <CarouselNext className="relative -translate-y-0 h-10 w-10 rounded-full border-primary/20 bg-background/80 backdrop-blur-sm text-primary hover:bg-primary hover:text-white" />
             </div>
           </Carousel>
         </motion.div>

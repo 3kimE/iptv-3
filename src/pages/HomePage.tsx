@@ -8,7 +8,8 @@ import PricingSection from "@/components/Home/PricingSection";
 import TestimonialSection from "@/components/Home/TestimonialSection";
 import CallToAction from "@/components/Home/CallToAction";
 import MediaCarousel from "@/components/Home/MediaCarousel";
-import { Film, Tv, Flame } from "lucide-react";
+import { Film, Tv, Soccer as SoccerBall } from "lucide-react";
+import { WhatsappButton } from "@/components/WhatsappButton";
 
 // Mock data for carousels
 const popularMovies = [
@@ -105,52 +106,52 @@ const liveChannels = [
   },
 ];
 
-const trendingMovies = [
+const popularSports = [
   {
-    id: "tm1",
-    title: "Skyfall Ultimatum",
-    image: "https://images.unsplash.com/photo-1461151304267-38535e780c79?w=500&auto=format&fit=crop&q=60",
-    category: "Thriller",
+    id: "s1",
+    title: "Champions League",
+    image: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=500&auto=format&fit=crop&q=60",
+    category: "Soccer",
     rating: 4.9,
-    year: 2023
+    isLive: true
   },
   {
-    id: "tm2",
-    title: "Wild Horizons",
-    image: "https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=500&auto=format&fit=crop&q=60",
-    category: "Documentary",
-    rating: 4.7,
-    year: 2023
-  },
-  {
-    id: "tm3",
-    title: "Eternal Love",
-    image: "https://images.unsplash.com/photo-1539310399736-0517fda11c32?w=500&auto=format&fit=crop&q=60",
-    category: "Romance",
-    rating: 4.5,
-    year: 2022
-  },
-  {
-    id: "tm4",
-    title: "Cyber Attack",
-    image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=500&auto=format&fit=crop&q=60",
-    category: "Sci-Fi",
+    id: "s2",
+    title: "NBA Finals",
+    image: "https://images.unsplash.com/photo-1504450758481-7338eba7524a?w=500&auto=format&fit=crop&q=60",
+    category: "Basketball",
     rating: 4.8,
-    year: 2023
+    isLive: true
   },
   {
-    id: "tm5",
-    title: "Mountain Escape",
-    image: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=500&auto=format&fit=crop&q=60",
-    category: "Adventure",
+    id: "s3",
+    title: "Formula 1 Grand Prix",
+    image: "https://images.unsplash.com/photo-1580204441268-0c0d5110c9cc?w=500&auto=format&fit=crop&q=60",
+    category: "Racing",
+    rating: 4.7,
+    isLive: false
+  },
+  {
+    id: "s4",
+    title: "Tennis Grand Slam",
+    image: "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?w=500&auto=format&fit=crop&q=60",
+    category: "Tennis",
     rating: 4.6,
-    year: 2023
+    isLive: true
+  },
+  {
+    id: "s5",
+    title: "Premier League",
+    image: "https://images.unsplash.com/photo-1516731415723-fe8463b7f22c?w=500&auto=format&fit=crop&q=60",
+    category: "Soccer",
+    rating: 4.9,
+    isLive: true
   },
 ];
 
 const HomePage = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-background relative">
       <MainNav />
       
       <main className="flex-1">
@@ -162,28 +163,30 @@ const HomePage = () => {
           items={popularMovies}
           type="movie"
           viewAllLink="/movies"
-          icon={<Film className="text-primary h-5 w-5" />}
+          icon={<Film className="h-6 w-6" />}
+          cardStyle="overlay"
         />
         
         <MediaCarousel
-          title="Live Channels"
+          title="Live TV Channels"
           subtitle="Watch what's streaming right now"
           items={liveChannels}
           type="channel"
           viewAllLink="/live-tv"
-          icon={<Tv className="text-red-500 h-5 w-5" />}
+          icon={<Tv className="h-6 w-6" />}
           accentColor="primary"
         />
         
         <FeatureSection />
         
         <MediaCarousel
-          title="Trending Movies"
-          subtitle="Gaining popularity this month"
-          items={trendingMovies}
-          type="movie"
-          viewAllLink="/movies"
-          icon={<Flame className="text-accent h-5 w-5" />}
+          title="Popular Sports"
+          subtitle="Never miss your favorite games"
+          items={popularSports}
+          type="sport"
+          viewAllLink="/live-tv"
+          icon={<SoccerBall className="h-6 w-6" />}
+          accentColor="accent"
         />
         
         <PricingSection />
@@ -194,6 +197,9 @@ const HomePage = () => {
       </main>
       
       <MainFooter />
+      
+      {/* WhatsApp Button */}
+      <WhatsappButton />
     </div>
   );
 };

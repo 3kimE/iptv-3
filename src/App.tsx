@@ -12,6 +12,7 @@ import ContactPage from "./pages/ContactPage";
 import PricingPage from "./pages/PricingPage";
 import ChannelDetailPage from "./pages/ChannelDetailPage";
 import MovieDetailPage from "./pages/MovieDetailPage";
+import CheckoutPage from "./pages/CheckoutPage";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/channel/:id" element={<ChannelDetailPage />} />
           <Route path="/movie/:id" element={<MovieDetailPage />} />
+          <Route path="/checkout/:packageId" element={<CheckoutPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

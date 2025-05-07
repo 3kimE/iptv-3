@@ -11,7 +11,7 @@ interface MediaCardProps {
   id: string;
   title: string;
   image: string;
-  type: "movie" | "channel";
+  type: "movie" | "channel" | "sport";
   category?: string;
   rating?: number;
   isLive?: boolean;
@@ -65,7 +65,7 @@ const MediaCard = ({
             
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="flex flex-col gap-2">
-                <Button variant="accent" size="sm" className="rounded-full" asChild>
+                <Button size="sm" className="rounded-full bg-accent text-accent-foreground hover:bg-accent/90" asChild>
                   <Link to={detailUrl}>
                     <Play className="h-4 w-4 mr-1" /> {isLive ? "Watch Now" : "Play"}
                   </Link>
