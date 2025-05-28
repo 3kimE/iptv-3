@@ -5,6 +5,7 @@ import MainFooter from "@/components/Footer/MainFooter";
 import { Button } from "@/components/ui/button";
 import { Check, Info, CreditCard, AlertCircle, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
+import { WhatsappButton } from "@/components/WhatsappButton";
 import { 
   Accordion,
   AccordionContent,
@@ -349,6 +350,7 @@ const PricingPage = () => {
       </main>
       
       <MainFooter />
+       <WhatsappButton />
     </div>
   );
 };

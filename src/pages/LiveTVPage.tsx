@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Search, SlidersHorizontal, Tv } from "lucide-react";
 import { motion } from "framer-motion";
 
+import { WhatsappButton } from "@/components/WhatsappButton";
 // Mock categories
 const categories = [
   { id: "all", name: "All Channels" },
@@ -248,6 +249,7 @@ const LiveTVPage = () => {
       </main>
       
       <MainFooter />
+       <WhatsappButton />
     </div>
   );
 };

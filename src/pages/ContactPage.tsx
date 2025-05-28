@@ -1,18 +1,18 @@
 
 import React from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import MainNav from "@/components/Navigation/MainNav";
+import MainFooter from "@/components/Footer/MainFooter";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { MessageSquare, Phone, Mail, MapPin, ArrowRight } from "lucide-react";
-
+import { WhatsappButton } from "@/components/WhatsappButton";
 const ContactPage = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      <Navbar />
+      <MainNav/>
       
       <main className="flex-1">
         <div className="bg-gradient-to-b from-iptv-900 to-background py-16">
@@ -189,7 +189,8 @@ const ContactPage = () => {
         </div>
       </main>
       
-      <Footer />
+   <MainFooter />
+            <WhatsappButton />
     </div>
   );
 };

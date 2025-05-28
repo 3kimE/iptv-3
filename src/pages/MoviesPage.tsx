@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, SlidersHorizontal, Film } from "lucide-react";
 import { motion } from "framer-motion";
+import { WhatsappButton } from "@/components/WhatsappButton";
 
 // Mock categories
 const categories = [
@@ -22,109 +23,142 @@ const categories = [
 
 // Mock movies data
 const allMovies = [
-  {
+    {
     id: "m1",
-    title: "The Last Duel",
-    image:
-      "https://m.media-amazon.com/images/M/MV5BZGZiNDFkNDgtNDlmNS00NzZmLTg4MmItMzJkYjdmMjJkZDliXkEyXkFqcGc@._V1_.jpg",
-    category: "Action",
-    rating: 4.8,
-    year: 2021,
+    title: "Joker: Folie à Deux",
+    image: "https://fr.web.img6.acsta.net/img/f5/a1/f5a1012acb73bb38b4801fe371a54227.jpg",
+    category: "drama/musical",
+    rating: 3.5,
+    year: 2024
   },
   {
     id: "m2",
-    title: "Midnight in Paris",
-    image:
-      "https://upload.wikimedia.org/wikipedia/en/9/9f/Midnight_in_Paris_Poster.jpg",
-    category: "Romance",
-    rating: 4.5,
-    year: 2011,
+    title: "A Minecraft Movie",
+    image: "https://shop.warnerbros.co.uk/cdn/shop/files/Minecraft4Kflat.jpg?v=1742984443",
+    category: "adventure/fantasy",
+    rating: 4.2,
+    year: 2025
   },
   {
     id: "m3",
-    title: "Dark Matter",
-    image:
-      "https://media.senscritique.com/media/000022102613/0/dark_matter.png",
-    category: "Sci-Fi",
-    rating: 4.7,
-    year: 2015,
+    title: "Gladiator II",
+    image: "https://upload.wikimedia.org/wikipedia/en/0/04/Gladiator_II_%282024%29_poster.jpg",
+    category: "action/drama",
+    rating: 4.5,
+    year: 2024
   },
   {
     id: "m4",
-    title: "The Forest",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs-k80E5pjwczeHnPtN_MjmU4x7sToQOqhew&s",
-    category: "Horror",
-    rating: 4.3,
-    year: 2016,
+    title: "Venom: The Last Dance",
+    image: "https://upload.wikimedia.org/wikipedia/en/a/a3/Venom_The_Last_Dance_Poster.jpg",
+    category: "superhero/action",
+    rating: 4.1,
+    year: 2024
   },
   {
     id: "m5",
+    title: "Deadpool 3",
+    image: "https://fr.web.img5.acsta.net/img/e4/cd/e4cd101f2e66f4e7818fcf53d05c006a.jpg",
+    category: "action/comedy",
+    rating: 4.6,
+    year: 2024
+  },
+  
+  {
+    id: "m6",
+    title: "Smile 2",
+    image: "https://cinedweller.com/wp-content/uploads/2024/10/smile-2-affiche.jpg.webp",
+    category: "horror",
+    rating: 4.0,
+    year: 2024
+  },
+  {
+    id: "m7",
+    title: "Bad Boys: Ride or Die",
+    image: "https://fr.web.img6.acsta.net/img/ef/bb/efbbe86f093b0904258c8a9b1e60bae7.jpg",
+    category: "action/comedy",
+    rating: 4.3,
+    year: 2024
+  },
+  {
+    id: "m8",
+    title: "The Dark Knight",
+    image:
+      "https://fr.web.img2.acsta.net/medias/nmedia/18/63/97/89/18949761.jpg",
+    category: "action",
+    rating: 4.9,
+    year: 2008,
+  },
+  {
+    id: "m9",
+    title: "The Shawshank Redemption",
+    image:
+      "https://upload.wikimedia.org/wikipedia/en/8/81/ShawshankRedemptionMoviePoster.jpg",
+    category: "drama",
+    rating: 4.9,
+    year: 1994,
+  },
+  {
+    id: "m10",
+    title: "The Godfather",
+    image:
+      "https://m.media-amazon.com/images/M/MV5BNGEwYjgwOGQtYjg5ZS00Njc1LTk2ZGEtM2QwZWQ2NjdhZTE5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+    category: "crime",
+    rating: 4.9,
+    year: 1972,
+  },
+  {
+    id: "m11",
+    title: "The Matrix",
+    image:
+      "https://upload.wikimedia.org/wikipedia/en/9/94/The_Matrix.jpg",
+    category: "sci-fi",
+    rating: 4.7,
+    year: 1999,
+  },
+  {
+    id: "m12",
     title: "Inception",
     image:
-      "https://media0078.elcinema.com/uploads/_315x420_2028a02da250c809cc4493409e19f7f80e2f37f9045ef28cf033448f56968505.jpg",
-    category: "Sci-Fi",
+      "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg",
+    category: "sci-fi",
     rating: 4.8,
     year: 2010,
   },
   {
-    id: "m6",
+    id: "m13",
     title: "Deadpool",
     image:
       "https://fr.web.img5.acsta.net/img/e4/cd/e4cd101f2e66f4e7818fcf53d05c006a.jpg",
-    category: "Action/Comedy",
+    category: "action/comedy",
     rating: 4.7,
     year: 2016,
   },
 
   {
-    id: "m1",
-    title: "The Last Journey",
+    id: "m14",
+    title: "The Lion King",
     image:
-      "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=500&auto=format&fit=crop&q=60",
+      "https://m.media-amazon.com/images/M/MV5BMjIwMjE1Nzc4NV5BMl5BanBnXkFtZTgwNDg4OTA1NzM@._V1_.jpg",
+    category: "animation",
+    rating: 4.8,
+    year: 2019,
+  },
+  {
+    id: "m15",
+    title: "The Avengers",
+    image:
+      "https://upload.wikimedia.org/wikipedia/en/8/8a/The_Avengers_%282012_film%29_poster.jpg",
     category: "action",
     rating: 4.8,
-    year: 2023,
+    year: 2012,
   },
-  {
-    id: "m2",
-    title: "Midnight in Paris",
-    image:
-      "https://images.unsplash.com/photo-1616530940355-351fabd9524b?w=500&auto=format&fit=crop&q=60",
-    category: "romance",
-    rating: 4.5,
-    year: 2022,
-  },
-  {
-    id: "m3",
-    title: "Dark Matter",
-    image:
-      "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=500&auto=format&fit=crop&q=60",
-    category: "sci-fi",
-    rating: 4.7,
-    year: 2023,
-  },
-  {
-    id: "m4",
-    title: "The Forest",
-    image:
-      "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=500&auto=format&fit=crop&q=60",
-    category: "horror",
-    rating: 4.3,
-    year: 2022,
-  },
+ 
+ 
+
 
   {
-    id: "m6",
-    title: "City Lights",
-    image:
-      "https://images.unsplash.com/photo-1506354666786-959d6d497f1a?w=500&auto=format&fit=crop&q=60",
-    category: "drama",
-    rating: 4.9,
-    year: 2023,
-  },
-  {
-    id: "m7",
+    id: "m16",
     title: "Havok 2025",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEDsrNqZSpouHIYFMVW3mvRJECZQe94Fnm7Q&s",
@@ -132,43 +166,49 @@ const allMovies = [
     rating: 4.1,
     year: 2022,
   },
-  {
-    id: "m8",
-    title: "Murder Mystery",
-    image:
-      "https://images.unsplash.com/photo-1579547621309-5e57ab324182?w=500&auto=format&fit=crop&q=60",
-    category: "thriller",
-    rating: 4.4,
-    year: 2023,
-  },
-  {
-    id: "m9",
-    title: "Skyfall Ultimatum",
-    image:
-      "https://images.unsplash.com/photo-1461151304267-38535e780c79?w=500&auto=format&fit=crop&q=60",
-    category: "action",
-    rating: 4.9,
-    year: 2023,
-  },
-  {
-    id: "m10",
-    title: "Wild Horizons",
-    image:
-      "https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=500&auto=format&fit=crop&q=60",
-    category: "adventure",
-    rating: 4.7,
-    year: 2023,
-  },
 
+
+  
+
+ 
   {
-    id: "m12",
-    title: "Cyber Attack",
+    id: "m17",
+    title: "Interstellar",
     image:
-      "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=500&auto=format&fit=crop&q=60",
-    category: "sci-fi",
-    rating: 4.8,
-    year: 2023,
+      "https://fr.web.img6.acsta.net/pictures/14/09/24/12/08/158828.jpg",
+    category: "sci-fi/adventure",
+    rating: 4.6,
+    year: 2014,
   },
+  {
+  id: "m18",
+  title: "Fly Me to the Moon",
+  image:
+    "https://musicart.xboxlive.com/7/5c4b6c00-0000-0000-0000-000000000002/504/image.jpg",
+  category: "romantic comedy",
+  rating: 4.1,
+  year: 2024,
+},
+{
+  id: "m19",
+  title: "Captain America: Brave New World",
+  image:
+    "https://fr.web.img2.acsta.net/img/92/55/9255d9aeb17004f6a622cc47e573777e.jpg",
+  category: "superhero/action",
+  rating: 4.4,
+  year: 2025,
+},
+{
+  id: "m20",
+  title: "A Working Man",
+  image:
+    "https://m.media-amazon.com/images/M/MV5BYmQxZGIxNTYtYTQwMy00ODdkLWI0MmQtM2E0ZmIyNmYzMGMzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+  category: "drama",
+  rating: 4.0,
+  year: 2024,
+},
+
+
 ];
 
 const MoviesPage = () => {
@@ -306,6 +346,7 @@ const MoviesPage = () => {
       </main>
 
       <MainFooter />
+       <WhatsappButton />
     </div>
   );
 };

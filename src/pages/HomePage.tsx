@@ -15,61 +15,63 @@ import { WhatsappButton } from "@/components/WhatsappButton";
 const popularMovies = [
   {
     id: "m1",
-    title: "The Last Duel",
-    image: "https://m.media-amazon.com/images/M/MV5BZGZiNDFkNDgtNDlmNS00NzZmLTg4MmItMzJkYjdmMjJkZDliXkEyXkFqcGc@._V1_.jpg",
-    category: "Action",
-    rating: 4.8,
-    year: 2021
+    title: "Joker: Folie à Deux",
+    image: "https://fr.web.img6.acsta.net/img/f5/a1/f5a1012acb73bb38b4801fe371a54227.jpg",
+    category: "Drama/Musical",
+    rating: 3.5,
+    year: 2024
   },
   {
     id: "m2",
-    title: "Midnight in Paris",
-    image: "https://upload.wikimedia.org/wikipedia/en/9/9f/Midnight_in_Paris_Poster.jpg",
-    category: "Romance",
-    rating: 4.5,
-    year: 2011
+    title: "A Minecraft Movie",
+    image: "https://shop.warnerbros.co.uk/cdn/shop/files/Minecraft4Kflat.jpg?v=1742984443",
+    category: "Adventure/Fantasy",
+    rating: 4.2,
+    year: 2025
   },
   {
     id: "m3",
-    title: "Dark Matter",
-    image: "https://media.senscritique.com/media/000022102613/0/dark_matter.png",
-    category: "Sci-Fi",
-    rating: 4.7,
-    year: 2015
+    title: "Gladiator II",
+    image: "https://upload.wikimedia.org/wikipedia/en/0/04/Gladiator_II_%282024%29_poster.jpg",
+    category: "Action/Drama",
+    rating: 4.5,
+    year: 2024
   },
   {
     id: "m4",
-    title: "The Forest",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs-k80E5pjwczeHnPtN_MjmU4x7sToQOqhew&s",
-    category: "Horror",
-    rating: 4.3,
-    year: 2016
+    title: "Venom: The Last Dance",
+    image: "https://upload.wikimedia.org/wikipedia/en/a/a3/Venom_The_Last_Dance_Poster.jpg",
+    category: "Superhero/Action",
+    rating: 4.1,
+    year: 2024
   },
   {
     id: "m5",
-    title: "Inception",
-    image: "https://media0078.elcinema.com/uploads/_315x420_2028a02da250c809cc4493409e19f7f80e2f37f9045ef28cf033448f56968505.jpg",
-    category: "Sci-Fi",
-    rating: 4.8,
-    year: 2010
-  },
-  {
-    id: "m6",
-    title: "Deadpool",
+    title: "Deadpool 3",
     image: "https://fr.web.img5.acsta.net/img/e4/cd/e4cd101f2e66f4e7818fcf53d05c006a.jpg",
     category: "Action/Comedy",
-    rating: 4.7,
-    year: 2016
+    rating: 4.6,
+    year: 2024
+  },
+  
+  {
+    id: "m6",
+    title: "Smile 2",
+    image: "https://cinedweller.com/wp-content/uploads/2024/10/smile-2-affiche.jpg.webp",
+    category: "Horror",
+    rating: 4.0,
+    year: 2024
   },
   {
     id: "m7",
-    title: "Deadpool",
-    image: "https://fr.web.img5.acsta.net/img/e4/cd/e4cd101f2e66f4e7818fcf53d05c006a.jpg",
+    title: "Bad Boys: Ride or Die",
+    image: "https://fr.web.img6.acsta.net/img/ef/bb/efbbe86f093b0904258c8a9b1e60bae7.jpg",
     category: "Action/Comedy",
-    rating: 4.7,
-    year: 2016
-  },
+    rating: 4.3,
+    year: 2024
+  }
 ];
+
 
 
 
@@ -164,7 +166,6 @@ const popularSports = [
     id: "s5",
     title: "English Premier League",
     image: "https://www.thesportsdb.com/images/media/league/poster/67al0l1719007596.jpg",
-    category: "Soccer",
     rating: 4.9,
     isLive: true
   },
