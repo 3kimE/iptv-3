@@ -23,8 +23,8 @@ const popularMovies = [
   },
   {
     id: "m2",
-    title: "A Minecraft Movie",
-    image: "https://shop.warnerbros.co.uk/cdn/shop/files/Minecraft4Kflat.jpg?v=1742984443",
+    title: "Minecraft ",
+    image: "https://upload.wikimedia.org/wikipedia/en/thumb/6/66/A_Minecraft_Movie_poster.jpg/250px-A_Minecraft_Movie_poster.jpg",
     category: "Adventure/Fantasy",
     rating: 4.2,
     year: 2025
